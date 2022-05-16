@@ -1,0 +1,58 @@
+#!usr/bin/bash
+
+clear
+## ANSI colors (FG & BG)
+RED="$(printf '\033[31m')"  GREEN="$(printf '\033[32m')"  ORANGE="$(printf '\033[33m')"  BLUE="$(printf '\033[34m')"
+MAGENTA="$(printf '\033[35m')"  CYAN="$(printf '\033[36m')"  WHITE="$(printf '\033[37m')" BLACK="$(printf '\033[30m')"
+REDBG="$(printf '\033[41m')"  GREENBG="$(printf '\033[42m')"  ORANGEBG="$(printf '\033[43m')"  BLUEBG="$(printf '\033[44m')"
+MAGENTABG="$(printf '\033[45m')"  CYANBG="$(printf '\033[46m')"  WHITEBG="$(printf '\033[47m')" BLACKBG="$(printf '\033[40m')"
+RESETBG="$(printf '\e[0m\n')"
+
+
+## security_varification
+
+echo ${GREEN}'[PLEASE VARIFY KEY.....]' | pv -qL 10 
+#!password requirements -
+read -p $'\n\033[31m[0] \033[32mHOW_TO_USE\n\033[31m[1] \033[32mGET KEY\n\033[31m[2] \033[32mENTER KEY\n\nSELECT AN OPTION :- \n\n\33[32m\033[35m[Sploiterx]•[:= ' key
+
+if [[ $keys == *'0'* ]]; then
+
+sleep 2
+termux-open-url https://youtube.com/c/Sploiterx
+bash start
+fi
+
+if [[ $key == *'1'* ]]; then
+
+termux-open-url https://wa.me/917830754015?text=PLEASE%20GIVE%20ME%20TOPIC%20-%2038%20%20ACTIVATION%20KEY%20%3A
+clear
+sleep 3
+bash start
+fi
+
+if [[ $key == *'2'* ]]; then
+clear
+read -p $'\n\033[32mENTER VALID \033[31mKEY \n\n\033[35m[Sploiterx]•[:= ' keys
+if [[ $keys == *'plz_support_sploiterx'* ]]; then
+clear
+sleep 2
+echo ${GREEN}'ACCESS_GRANTED 😆😆 ......' | pv -qL 10
+sleep 2
+clear
+bash setup
+exit
+fi
+fi
+
+if [[ $key != *'plz_support'* ]]; then
+clear
+echo ${GREEN}'Wait For Checking.........' | pv -qL 8
+sleep 2
+echo ${RED}'OOPS WRONG_KEY 😭😭😭.........' | pv -qL 10
+sleep 3
+termux-open-url https://wa.me/917830754015?text=PLEASE%20GIVE%20ME%20TOPIC%20-%2038%20%20ACTIVATION%20KEY%20%3A
+echo ${RED}'TO RUN AGAIN TYPE [bash start] '  | pv -qL 10
+sleep 240
+exit
+
+fi
